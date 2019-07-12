@@ -32,6 +32,8 @@ By default, the rack monome will send to **Channel 0**, you can change channel b
 
 ## Layout
 
+The first value is the ableton drum selection of 4x4 pads, the second is the pad id, from 0 to 16.
+
 ```
 1C 1D 1E 1F 3C 3D 3E 3F 5C 5D 5E 5F 7C 7D 7E 7F
 18 19 1A 1B 38 39 3A 3B 58 59 5A 5B 78 79 7A 7B
