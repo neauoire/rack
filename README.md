@@ -18,7 +18,7 @@ An implementation of the [Ableton Drum Rack layout](https://llllllll.co/t/using-
 - type `cd Documents`
 - type `git clone https://github.com/neauoire/rack.git`
 - type `cd rack`
-- type `sudo npm install`
+- type `npm install`
 - type `node index`
 
 ### Whenever you want to use it
