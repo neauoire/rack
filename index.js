@@ -8,6 +8,7 @@ const output = new easymidi.Output(name, true)
 let channel = 1
 let grid = null
 let fn = false
+let brightnessMap = [0,0,1,2,4,8,15]
 
 console.log(`Welcome to ${name}, press any key to stop.`)
 
@@ -41,8 +42,6 @@ function posAt (i) {
 function idAt (x, y) {
   return (y * 16) + x
 }
-
-let brightnessMap = [0,0,1,2,4,8,15]
 
 function levelAt(x, y) {
   return  brightnessMap[((15 - x) % 4)  + (y % 4)]
