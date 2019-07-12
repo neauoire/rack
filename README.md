@@ -2,7 +2,7 @@
 
 An implementation of the [Ableton Drum Rack layout](https://llllllll.co/t/using-a-grid-as-linnstrument/23637/34?u=neauoire) for the **Monome 128**. This tiny console script will create a new virtual instrument called **Rack Monome** to use with your DAW. You can follow the discussion [here](https://llllllll.co/t/using-a-grid-as-linnstrument/23637).
 
-<img src='https://raw.githubusercontent.com/neauoire/linn/master/PREVIEW.jpg' width='600'/>
+<img src='https://raw.githubusercontent.com/neauoire/rack/master/PREVIEW.jpg' width='600'/>
 
 ## Setup
 
