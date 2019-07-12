@@ -32,17 +32,15 @@ By default, the rack monome will send to **Channel 0**, you can change channel b
 
 ## Layout
 
-The first value is the ableton drum selection of 4x4 pads, the second is the pad id, from 0 to 16.
-
 ```
-1C 1D 1E 1F 3C 3D 3E 3F 5C 5D 5E 5F 7C 7D 7E 7F
-18 19 1A 1B 38 39 3A 3B 58 59 5A 5B 78 79 7A 7B
-14 15 16 17 34 35 36 37 54 55 56 57 74 75 76 77
-10 11 12 13 30 31 32 33 50 51 52 53 70 71 72 73
-0C 0D 0E 0F 2C 2D 2E 2F 4C 4D 4E 4F 6C 6D 6E 6F
-08 09 0A 0B 28 29 2A 2B 48 49 4A 4B 68 69 6A 6B
-04 05 06 07 24 25 26 27 44 45 46 47 64 65 66 67
-00 01 02 03 20 21 22 23 40 41 42 43 60 61 62 63
+G0#  A0   A0#  B0   E3   F3   F3#  G3   C6   C6#  D6   D6#  CY   CY#  DY   DY#   
+E0   F0   F0#  G0   C3   C3#  D3   D3#  G5#  A5   A5#  B5   E8   F8   F8#  G8   
+C0   C0#  D0   D0#  G2#  A2   A2#  B2   E5   F5   F5#  G5   C8   C8#  D8   D8# 
+GZ#  AZ   AZ#  BZ   E2   F2   F2#  G2   C5   C5#  D5   D5#  G7#  A7   A7#  B7  
+EZ   FZ   FZ#  GZ   C2   C2#  D2   D2#  G4#  A4   A4#  B4   E7   F7   F7#  G7  
+CZ   CZ#  DZ   DZ#  G1#  A1   A1#  B1   E4   F4   F4#  G4   C7   C7#  D7   D7# 
+GY#  AY   AY#  BY   E1   F1   F1#  G1   C4   C4#  D4   D4#  G6#  A6   A6#  B6  
+EY   FY   FY#  GY   C1   C1#  D1   D1#  G3#  A3   A3#  B3   E6   F6   F6#  G6  
 ```
 
 Enjoy :)
