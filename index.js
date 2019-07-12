@@ -61,7 +61,6 @@ function onKeyDown (x, y) {
   if (fn && idAt(x, y) < 16) {
     setChannel(idAt(x, y))
   }
-  console.log(id)
   fn = id === 127
 }
 
