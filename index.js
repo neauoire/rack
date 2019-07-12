@@ -42,10 +42,16 @@ function idAt (x, y) {
   return (y * 16) + x
 }
 
+let brightnessMap = [0,0,1,2,4,8,15]
+
+function levelAt(x, y) {
+  return  brightnessMap[((15 - x) % 4)  + (y % 4)]
+}
+
 function redraw () {
   for (let i = 0; i < 128; i++) {
     const pos = posAt(i)
-    grid.levelSet(pos.x, pos.y, offsetAt(pos.x, pos.y))
+    grid.levelSet(pos.x, pos.y, levelAt(pos.x, pos.y))
   }
 }
 
@@ -65,7 +71,7 @@ function onKeyDown (x, y) {
 }
 
 function onKeyUp (x, y) {
-  grid.levelSet(x, y, offsetAt(x, y))
+  grid.levelSet(x, y, levelAt(x, y))
   output.send('noteoff', { note: noteAt(x, y), velocity: 127, channel: channel })
   fn = false
 }
