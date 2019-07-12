@@ -26,4 +26,8 @@ An implementation of the [Ableton Drum Rack layout](https://llllllll.co/t/using-
 - type `cd Documents/rack`
 - type `node index`
 
+## Channel
+
+By default, the rack monome will send to **Channel 0**, you can change channel by holding down the last key(bottom right), and pressing one of the 16 keys of the top row.
+
 Enjoy :)

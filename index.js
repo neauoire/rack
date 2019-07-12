@@ -7,8 +7,6 @@ const output = new easymidi.Output(name, true)
 
 let channel = 1
 let grid = null
-let last = null
-let down = 0
 let fn = false
 
 console.log(`Welcome to ${name}, press any key to stop.`)
@@ -20,7 +18,7 @@ serialosc.start()
 function noteAt (x, y) {
   const q = quadAt(x, y)
   const o = offsetAt(x, y)
-  return (q * 16) + o
+  return (((q * 16) + o) + 4) % 128
 }
 
 function offsetAt (x, y) {
@@ -47,38 +45,30 @@ function idAt (x, y) {
 function redraw () {
   for (let i = 0; i < 128; i++) {
     const pos = posAt(i)
-    grid.levelSet(pos.x, pos.y, 0)
+    grid.levelSet(pos.x, pos.y, offsetAt(pos.x, pos.y))
   }
 }
 
-function print (note) {
-  console.log(`${(note.i + '').padStart(3, ' ')} | ${(note.p + '').padStart(3, ' ')} | ${(note.v + '').padStart(3, ' ')} | ch:${(channel + '').padStart(3, ' ')}`)
+function setChannel (ch) {
+  channel = ch
+  console.log('Set Channel: ', channel)
 }
 
 function onKeyDown (x, y) {
   const id = idAt(x, y)
-  console.log(id, posAt(id), quadAt(x, y), padAt(x, y), noteAt(x, y))
-  // const note = noteAt(idAt(x, y))
-  // down += 1
   grid.levelSet(x, y, 10)
-  // output.send('noteon', { note: note.v, velocity: 127, channel: channel })
-  // print(note)
-  // if (fn && idAt(x, y) < 16) {
-  //   channel = idAt(x, y)
-  // }
-  // fn = note.i === 127
-  // last = note.p
+  output.send('noteon', { note: noteAt(x, y), velocity: 127, channel: channel })
+  if (fn && idAt(x, y) < 16) {
+    setChannel(idAt(x, y))
+  }
+  console.log(id)
+  fn = id === 127
 }
 
 function onKeyUp (x, y) {
-  // const note = noteAt(idAt(x, y))
-  // down -= 1
-  grid.levelSet(x, y, 0)
-  // output.send('noteoff', { note: note.v, velocity: 127, channel: channel })
-  // fn = false
-  // if (down < 1) {
-  //   last = null
-  // }
+  grid.levelSet(x, y, offsetAt(x, y))
+  output.send('noteoff', { note: noteAt(x, y), velocity: 127, channel: channel })
+  fn = false
 }
 
 function close () {
